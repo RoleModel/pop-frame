@@ -1,0 +1,3 @@
+#!/usr/bin/env sh
+# The dummy app, for trying pop_frame in a browser: http://localhost:3000
+cd "$(dirname "$0")/../test/dummy" && exec bundle exec rackup --port "${PORT:-3000}"

@@ -1,0 +1,7 @@
+<h1>pop_frame</h1>
+<p>Open a week and save from inside it: the page morphs, and the popover stays open with the new version.</p>
+<div class="weeks">
+  <% 1.upto(8) do |n| %>
+    <%= pop_frame_tag "week_#{n}", week_path(n), class: 'week' do %>Week <%= n %><% end %>
+  <% end %>
+</div>

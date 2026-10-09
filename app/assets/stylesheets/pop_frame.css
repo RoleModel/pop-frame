@@ -1,0 +1,7 @@
+/* Anchored to the button that opened it, below and aligned to its start, flipping when it won't fit. */
+.pop-frame[popover] {
+  inset: auto;
+  margin: 4px 0 0;
+  position-area: block-end span-inline-end;
+  position-try-fallbacks: flip-block, flip-inline;
+}

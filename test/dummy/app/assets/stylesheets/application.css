@@ -1,0 +1,6 @@
+body { font-family: system-ui, sans-serif; margin: 2rem; }
+.weeks { display: flex; gap: 0.5rem; overflow: auto; max-width: 420px; padding: 1rem 0; }
+.week { flex: none; padding: 0.5rem 1rem; }
+.week:has(+ :popover-open) { outline: 2px solid royalblue; }
+.pop-frame { padding: 1rem; border: 1px solid #ccc; border-radius: 8px; box-shadow: 0 8px 24px #0002; }
+turbo-frame[busy] { opacity: 0.5; }

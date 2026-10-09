@@ -1,0 +1,11 @@
+# Omakase Ruby styling for Rails
+inherit_gem: { rubocop-rails-omakase: rubocop.yml }
+
+# Use `'foo'` not `"foo"` unless interpolating or escaping
+Style/StringLiterals:
+  EnforcedStyle: single_quotes
+
+# Methods after `private` sit at the same depth as the ones before it
+Layout/IndentationConsistency:
+  Enabled: true
+  EnforcedStyle: normal

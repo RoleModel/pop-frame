@@ -1,0 +1,4 @@
+<%= turbo_frame_tag "week_#{params[:id]}" do %>
+  <p>Week <%= params[:id] %>, version <%= WeeksController.version %></p>
+  <%= button_to 'Save', save_weeks_path, form: { data: { turbo_frame: '_top' } } %>
+<% end %>
