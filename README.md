@@ -150,7 +150,7 @@ Lint with `bin/rubocop`.
 Run the dummy app's server on port 3000 with `bin/dev` (set `PORT` to change it). It's a page of
 popovers to try by hand.
 
-Releases are cut from the **Bump Version** workflow in the Actions tab. It takes the version bump and
+Releases are cut from the **Release** workflow in the Actions tab. It takes the version bump and
 a changelog entry, then tags the release, publishes it on GitHub, and pushes the gem to RubyGems.
 
 ## Acknowledgments
