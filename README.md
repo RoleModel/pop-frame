@@ -121,9 +121,18 @@ page (or a broadcast) morphs it:
 
 ## Browser Support
 
-The popover itself works anywhere the Popover API does (Baseline 2024). Positioning it under its
-button needs CSS anchor positioning: Chrome 125, Safari 26, Firefox 147. Older browsers still open
-the popover, just centered on the screen by the browser's default popover styles.
+Pop Frame leans on two browser features. Each one has its own [Baseline][baseline] status:
+
+| Feature                                                                 | Needs                                                                                                    | Chrome / Edge | Safari | Firefox | Baseline                                                       |
+| ----------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | ------------- | ------ | ------- | -------------------------------------------------------------- |
+| Opens and closes, sits in the top layer, closes on Escape/outside click | [Popover API][mdn-popover]                                                                               | 114           | 17     | 125     | Newly available Jan 2025; widely available around Jul 2027     |
+| Anchored under its button, flips to fit                                 | [CSS anchor positioning][mdn-anchor] ([`position-area`][mdn-position-area], [`position-try-fallbacks`][mdn-position-try]) | 129           | 26     | 147     | Newly available Jan 2026; widely available around Jul 2028     |
+
+Browsers with the Popover API but no anchor positioning still open the popover, just centered on the
+screen by the browser's default popover styles.
+
+- **Full experience:** Chrome 129, Edge 129, Safari 26 (macOS and iOS), Firefox 147
+- **Popover only, centered:** Chrome 114, Edge 114, Safari 17, Firefox 125
 
 Opening a popover from your own JavaScript with `showPopover()` leaves it with nothing to anchor to.
 Pass the button as its source, `popover.showPopover({ source: button })`, to keep it in place.
@@ -163,6 +172,9 @@ a changelog entry, then tags the release, publishes it on GitHub, and pushes the
 [mdn-popover]: https://developer.mozilla.org/en-US/docs/Web/API/Popover_API
 [mdn-top-layer]: https://developer.mozilla.org/en-US/docs/Glossary/Top_layer
 [mdn-anchor]: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_anchor_positioning
+[mdn-position-area]: https://developer.mozilla.org/en-US/docs/Web/CSS/position-area
+[mdn-position-try]: https://developer.mozilla.org/en-US/docs/Web/CSS/position-try-fallbacks
+[baseline]: https://web.dev/baseline
 [url-for]: https://api.rubyonrails.org/classes/ActionView/RoutingUrlFor.html#method-i-url_for
 [turbo-morph]: https://turbo.hotwired.dev/handbook/page_refreshes
 [Cuprite]: https://github.com/rubycdp/cuprite
